@@ -1,62 +1,46 @@
-<!-- This is a comment in HTML. Any text inside these symbols will not be displayed on the webpage. -->
-
-<!--
-    To generate a basic HTML boilerplate, type "!" and press "Tab" in a supported code editor.
-
-    For a detailed explanation of each element in the HTML boilerplate, you can visit:
-    https://www.theodinproject.com/lessons/foundations-html-boilerplate
--->
-
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-    <head>
-        <!-- Start of "head" section  -->
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Joel Perca: Personal Site and porfolio</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Joel Perca: Personal Site and porfolio</title>
+    <link rel="stylesheet" href="/assets/css/style.css" />
+    <link rel="stylesheet" href="/assets/css/home.css" />
+  </head>
 
-        <!-- Next line is for Step 5, to link the stylesheet to the HTML page. We will use "link" for this  -->
-        <link rel="" href="" />
-        <!--    rel="stylesheet" specifies the relationship (rel) between the HTML document and the linked file.
-                href="style.css" specifies the location (href) of the external file.
-                For example:
-                 <link rel="stylesheet" href="style.css">
-        -->
-    </head>
-    <!-- End of "head" section  -->
-
-    <body>
-        <!-- Start of "body" section  -->
-
-        <!-- <h1> (Heading 1) represents the main heading of a webpage or a section.-->
-        <h1>Joel Cristian Perca Quispe</h1>
-
-        <!-- <p> (Paragraph) represents a paragraph of text.-->
-        <p><!-- Write your description here  --></p>
+  <body>
+    <div class="content">
+      <nav class="header">
+        <a href="/">Home</a>
+        <a href="/projects">Projects</a>
+        <a href="/contacto">Contact</a>
+      </nav>
+      <div class="hero">
+        <div>
+          <h1 class="hero-title">Joel Cristian Perca Quispe</h1>
+          <p class="hero-description">
+            Fullstack developer crafting innovative digital solutions. Breaking
+            conventions with clean architecture and seamless experiences. Code
+            that speaks, systems that scale.
+          </p>
+          <div class="hero-buttons">
+            <button class="hero-button">Download Resume</button>
+            <a href="/contacto" class="hero-button">Contact</a>
+          </div>
+        </div>
 
         <!-- <img> (Image) tag is used to display images.-->
-        <img src="" alt="" />
-        <!-- Example:
+        <img
+          src="/assets/images/deadpool-metarupx.gif"
+          alt="Happy Deadpool"
+          width="128"
+        />
+      </div>
+      <!-- Example:
             <img src="images/my_image.jpeg" alt="A description of the image">
         -->
 
-        <!-- <nav> (Navigation) is used to create a menu with links to other pages or external sites. -->
-        <nav>
-            <!-- Navigation link to the home page -->
-            <a href="index.html">Home</a>
-            <!--
-                href="index.html" refers to the file that this link will open.
-                "Home" is the text that will be displayed as the clickable link.
-            -->
-
-            <!-- Complete the navigation as needed following the structure -->
-            <a href="">____</a>
-            <!-- Navigation link to the ____ page (inside the "____" folder) -->
-
-            <!-- NOTE: to link to external URLs you cna directly use the link at 'href'. Then, you can set target="_blank" to make it always open in a new tab.
-            For example:
-            <a href="https://www.google.com" target="_blank">Google</a>
-        --></nav>
-    </body>
-    <!-- End of "body" section  -->
+      <!-- <nav> (Navigation) is used to create a menu with links to other pages or external sites. -->
+    </div>
+  </body>
 </html>

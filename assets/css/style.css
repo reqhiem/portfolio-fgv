@@ -1,0 +1,75 @@
+:root {
+  --screen-sm: 576px;
+  --screen-md: 768px;
+  --screen-lg: 992px;
+  --screen-xl: 1200px;
+  --screen-2xl: 1400px;
+
+  --primary-color: #8a2be2;
+  --secondary-color: #ff6347;
+  --tertiary-color: #ffd700;
+  --quaternary-color: #4682b4;
+  --quinary-color: #32cd32;
+
+  --gray-50: #f9fafb;
+  --gray-100: #f3f4f6;
+  --gray-200: #e5e7eb;
+  --gray-300: #d1d5db;
+  --gray-400: #9ca3af;
+  --gray-500: #6b7280;
+  --gray-600: #4b5563;
+  --gray-700: #374151;
+  --gray-800: #1f2937;
+  --gray-900: #111827;
+}
+
+@font-face {
+  font-family: "Instrument Sans";
+  src: url("/assets/fonts/InstrumentSans-VariableFont_wdth,wght.ttf")
+    format("truetype");
+}
+
+* {
+  font-family: "Instrument Sans", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+}
+
+.content {
+  padding: 0 12px;
+  max-width: var(--screen-lg);
+  width: 100%;
+}
+
+.header {
+  padding: 8px 0;
+  display: flex;
+  gap: 15px;
+}
+
+.header a {
+  text-decoration: none;
+  color: var(--primary-color);
+  font-weight: 700;
+}
+
+.header a:hover {
+  text-decoration: underline;
+}
+
+.hero {
+  display: flex;
+  gap: 36px;
+}
+
+.hero > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 14px;
+}
