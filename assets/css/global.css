@@ -25,8 +25,7 @@
 
 @font-face {
   font-family: "Instrument Sans";
-  src: url("/assets/fonts/InstrumentSans-VariableFont_wdth,wght.ttf")
-    format("truetype");
+  src: url("/InstrumentSans-VariableFont_wdth,wght.ttf") format("truetype");
 }
 
 * {
