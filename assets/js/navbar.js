@@ -8,26 +8,45 @@ const createNavBar = () => {
   let nav = document.createElement("nav");
   nav.className = "header";
 
-  const basePath = location.pathname.split("/").slice(0, 2).join("/");
+  const isGitHubPages = location.hostname.includes("github.io");
+  let basePath = "";
+  let isSubfolder = false;
 
-  const currentPath = location.pathname.replace(basePath, "");
+  if (isGitHubPages) {
+    const pathParts = location.pathname.split("/").filter(Boolean);
+    if (pathParts.length > 0) {
+      const repoName = pathParts[0];
+      basePath = `/${repoName}`;
 
-  const pathSegments = currentPath.split("/").filter(Boolean);
-  const isInSubfolder = pathSegments.length > 0;
+      isSubfolder = pathParts.length > 1;
+    }
+  } else {
+    isSubfolder = location.pathname.split("/").filter(Boolean).length > 0;
+  }
 
-  const prefix = isInSubfolder ? "../" : "";
-
+  console.log("Base path:", basePath);
+  console.log("Is subfolder:", isSubfolder);
+  
   for (let page of pages) {
     let a = document.createElement("a");
+    
+    const isHome = page.url === "";
+    const currentPath = location.pathname;
+    const isActive =
+      (isHome &&
+        (currentPath === basePath || currentPath === `${basePath}/`)) ||
+      (!isHome && currentPath.includes(page.url));
 
-    if (
-      (page.url === "" && (currentPath === "/" || currentPath === "")) ||
-      (page.url !== "" && currentPath.includes(page.url))
-    ) {
+    if (isActive) {
       a.classList.add("active");
     }
-
-    a.href = prefix + page.url;
+    
+    if (isSubfolder) {
+      a.href = "../" + page.url;
+    } else {
+      a.href = page.url;
+    }
+    
     a.innerText = page.title;
     nav.appendChild(a);
   }
