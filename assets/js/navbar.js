@@ -8,15 +8,21 @@ const createNavBar = () => {
   let nav = document.createElement("nav");
   nav.className = "header";
 
-  const isInSubfolder = location.pathname.split("/").filter(Boolean).length > 0;
+  const basePath = location.pathname.split("/").slice(0, 2).join("/");
+
+  const currentPath = location.pathname.replace(basePath, "");
+
+  const pathSegments = currentPath.split("/").filter(Boolean);
+  const isInSubfolder = pathSegments.length > 0;
+
   const prefix = isInSubfolder ? "../" : "";
 
   for (let page of pages) {
     let a = document.createElement("a");
 
     if (
-      (page.url === "" && location.pathname === "/") ||
-      (page.url !== "" && location.pathname.includes(page.url))
+      (page.url === "" && (currentPath === "/" || currentPath === "")) ||
+      (page.url !== "" && currentPath.includes(page.url))
     ) {
       a.classList.add("active");
     }
